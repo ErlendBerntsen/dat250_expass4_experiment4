@@ -1,5 +1,7 @@
 package no.hvl.dat250.jpa.basicexample;
 
+import com.google.gson.Gson;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,13 @@ public class Todo {
     private Long id;
     private String summary;
     private String description;
+
+    String toJson () {
+
+        Gson gson = new Gson();
+
+        return gson.toJson(this);
+    }
 
     public String getSummary() {
         return summary;
